@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:grammarquiz/question_model.dart';
 import 'package:grammarquiz/start_screen.dart';
 
@@ -14,8 +15,6 @@ class _QuizScreenState extends State<QuizScreen> {
   int score = 0;
   Answer? selectedAnswer;
 
-  
-
   @override
   Widget build(BuildContext context) {
     
@@ -28,11 +27,12 @@ class _QuizScreenState extends State<QuizScreen> {
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            const Text(
-              "Simple Quiz App",
-              style: TextStyle(
+            Text(
+              "Grammar Quiz App",
+              style: GoogleFonts.ubuntu(
                 color:Colors.white,
                 fontSize: 24,
+                fontWeight: FontWeight.bold
               ),
             ),
             _questionWidget(),
@@ -51,7 +51,7 @@ class _QuizScreenState extends State<QuizScreen> {
       children: [
         Text(
           "Question ${currentQuestionIndex + 1}/${questionList.length.toString()}",
-          style: const TextStyle(
+          style: GoogleFonts.ubuntu(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w600,
